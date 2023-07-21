@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -35,9 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        title: Text('Account'),
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
       ),
       body: ListView.builder(
           itemCount: total,
@@ -56,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   icon: Icon(Icons.delete)),
             );
           }),
+
       floatingActionButton: FloatingActionButton(
         onPressed: _getDataFromStrapi,
         tooltip: 'Increment',

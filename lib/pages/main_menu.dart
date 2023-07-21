@@ -26,7 +26,7 @@ class Menu extends StatelessWidget {
             } else if (value == 1) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Account()),
+                MaterialPageRoute(builder: (context) => const MyHomePage()),
               );
             }
           },
